@@ -1,25 +1,32 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 
 <head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/resources/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
-
-  <title>TestApp</title>
-
-  <script id="sap-ui-bootstrap" src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
-    data-sap-ui-theme="sap_fiori_3" data-sap-ui-resourceroots='{
-        "johan.TestApp": "./"
-      }' data-sap-ui-oninit="module:sap/ui/core/ComponentSupport" data-sap-ui-compatVersion="edge"
-    data-sap-ui-async="true" data-sap-ui-frameOptions="trusted">
-    </script>
+  <title>Walkthrough</title>
+  <script id="sap-ui-bootstrap" 
+    src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js" 
+    data-sap-ui-theme="sap_bluecrystal"
+    data-sap-ui-libs="sap.m" 
+    data-sap-ui-bindingSyntax="complex"
+    data-sap-ui-compatVersion="edge" 
+    data-sap-ui-preload="async" 
+    data-sap-ui-resourceroots='{
+          "johan.TestApp": "./",
+        }'>
+  </script>
+  <script>
+    sap.ui.getCore().attachInit(function () {
+      new sap.ui.core.ComponentContainer({
+        name: "johan.TestApp"
+      }).placeAt("hello_world");
+    });
+  </script>
 </head>
 
 <body class="sapUiBody">
-  <div data-sap-ui-component data-name="johan.TestApp" data-id="container"
-    data-settings='{"id" : "TestApp"}'>
+  <div class="sapUiDiv" id="hello_world">
   </div>
 </body>
 
